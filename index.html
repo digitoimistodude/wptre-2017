@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Tampere WordPress Meetup, 9.11.2017: Erään digitoimiston tapa tehdä verkkosivustoja</title>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="favicons/manifest.json">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/dude.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+
+<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown>
+					<script type="text/template">
+						# Erään digitoimiston tapa tehdä verkkosivustoja
+						## #digitoimistodude
+
+						Tampere WordPress Meetup, 9.11.2017<br>
+						<a style="font-size: 2rem; color: #fff; opacity: .3;" href="https://slides.dude.fi">slides.dude.fi/wptre-2017</a>
+						<!--<small>Käytä nuolia tai spacea navigointiin</small>--> <!-- .element: class="text-small" -->
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:" data-background-image="img/timi.jpg">
+					<script type="text/template">
+						## Kuka Timi?
+
+						WordPressiä vuodesta 2009<br>
+						_(taustakehittäjä)_ Digitoimisto Dudella<br>
+						Liian aktiivinen WordPress-yhteisössä<br>
+
+						Twitter: @wahalahti<br>
+						WPFI Slack: @sippis<br>
+						GitHub: timiwahalahti
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:" data-background-image="img/rolle-overlay.jpg">
+					<script type="text/template">
+						## Kuka Roni?
+
+						Sano Rolle vaan<br>
+						WordPressiä vuodesta 2005<br>
+						_(frontend/perustaja)_ Digitoimisto Dudella<br>
+
+						Twitter: @rolle<br>
+						WPFI Slack: @rolle<br>
+						GitHub: ronilaukkarinen
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:" data-background-image="img/dudekset.jpg" style="text-align: center;">
+					<script type="text/template">
+						# Mikä Dude?
+
+						Note:
+						- Firman koko nimi: Digitoimisto Dude Oy
+						- Paikallinen, jyväskyläläinen toimija
+						- Perustettu keväällä 2013
+						- Yhteensä 4 dudea, joista 2 koodaria, 2 graafikkoa
+						- Keskiössä joustavuus ja laatu asiakaspalvelussa, koodissa ja työkaluissa
+						- Tulorahoitteinen
+						- Tavoite: jokainen sivusto on erilainen ja tarkoituksenmukainen
+						- Lisää verkkosivullamme: dude.fi/dude
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						## Ensin oli kuokka ja kirves...
+
+						- Räätälöityä alusta asti - ei valmisteemoja
+						- Webhotellit käytössä 2014 asti
+						- Toimiva workflow kehitettiin nopeasti
+
+						Note:
+						- Valmisteemoja ei ole käytetty koskaan, mutta alkuvaiheessa Bootstrap/Foundation
+						- FTP, "cowboy-koodaus" ja vanhat työkalut tökkii
+						- Sekavuus, epäjohdonmukaisuus
+						- Tekevät asioista vaikeita hallita
+						- Liian monta steppiä yksinkertaisten asioiden tekemiseen
+						- Vievät aikaa ja rahaa
+						- Dokumentaatio on tärkeää, vaikka tekisit hommia yksin
+						- Oma työkalupakki (stack) on saatava, jotta asiat onnistuu nopeammin ja helpommin
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:" style="text-align: center;">
+					<script type="text/template">
+						# Jatkuva kehitys osaksi päivärutiinia
+
+						Note:
+						- On ihan ok tehdä kehitystyötä vaikka joka päivä, aina kun tuntuu siltä
+						- Vie aikaa, mutta säästää siihen nähden vielä enemmän aikaa tulevaisuudessa
+						- Minimoi teknisen velan, sillä olet aina ajan tasalla
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:"">
+					<script type="text/template">
+						# Pohjalla on väliä
+						
+						<small>
+						github.com/digitoimistodude/dudestack<br>
+						github.com/digitoimistodude/air<br>
+						github.com/digitoimistodude/air-helper
+						</small>
+
+						Note:
+						- Ei ole täydellistä ratkaisua
+						- Kaikissa teemoissa on bloattia, jopa underscoressissa
+						- MUTTA, kaikki kehittyy
+						- Jotkut asiat on hyvä rakentaa lisäosaan (air-helper)
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:" style="text-align: center;">
+					<script type="text/template">
+						# Ketterä kehitys tiimissä
+
+						Note:
+						Workflow:
+						- "Lean", "agile", mitä näitä nyt ":D"
+						- Front- ja back end kehitys yhdessä
+						- Pienempiä sivustoja voi kehittää yksi devaaja, ei tarvita laajempaa tiimiä projektiin						
+						- Git ytimessä - lähes mahdotonta pysyä kärryillä tiimissä ilman versionhallintaa
+						- Omat branchit: front-end ja back-end
+						- Mergeä usein masteriin
+						- Kommunikaatio, kommunikaatio ja kommunikaatio
+						- Testaus ajoissa
+						- Tekemisjärjestyksellä ei merkitystä, prosessilla ja edistymisellä on
+						- Aloitus ja julkaisu yhden komennon taktiikalla
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:" style="text-align: center;">
+					<script type="text/template">
+						# Entäs ne palvelimet?
+
+						Note:
+						- Vaihda seuraavaan (tuuletin GIF)
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:" style="text-align: center;" data-background-image="img/fan.gif">
+					<script type="text/template">
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:" style="text-align: center;">
+					<script type="text/template">
+						# Entäs ne palvelimet?
+						<!-- Laitetaan jälkikäteen julkaistaviin slaideihin: https://www.dude.fi/harharetki-palvelinmaailmassa -->
+
+						Note:
+						- Tärkeä osa WordPress-projekteja. Kaikki voi mennä pieleen vaikka sivusto olisi maailman paras
+						- Käytä vain hyviä tarjoajia (opimme tämän pitkän kavaan kautta)
+						- Jos tietotaitoa löytyy, rakenna oma infrastruktuuri
+						- Vaikka sivut olisi alhaalla, kukaan ei kuole
+						- Toteuttajalle helpompi kun kaikki langat on omissa käsissä (tai korkeintaan luotettavan tahon käsissä) ja tietää että asiat hoituu eikä tarvitse soittaa tuhanteen eri firmaan
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:" style="text-align: center;" data-background-image="img/soinipeukku.gif">
+					<script type="text/template">
+						# Miten tänään menee?
+						### Eli mitä ollaan saavutettu 2013-2017
+
+						Note:
+						- Mitä on saavutettu:
+						- Projektit ovat hauskempia moderneilla tavoilla
+						- Kaikki on omassa hallinnassa
+						- Muut kärsivät samoista ongelmista, helppo käydä kahvilla ja vaihtaa ajatuksia (Meetupit)
+						- Tulevaisuus näyttää valoisalta!
+						- Ei tarvitta "bleeding edgelle", gulp/grunt tai vagrant on silti ihan hyvä
+						- Avoimuus ja nöyryys, olemme täällä asiakasta varten, emme kehittäjien omassa kuplassa
+						- Asiakkaat arvostaa yhden luukuun taktiikkaa ja joustavuutta
+						- Huomattu että saitin koolla ei ole väliä kunhan stack on kunnossa
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:" style="text-align: center;">
+					<script type="text/template">
+						# Avoin lähdekoodi
+
+						WordPress on avointa lähdekoodia - miksi sinun työkalusi eivät?
+
+						Note:
+						- Avoimet työkalut kehittävät lisää parempia työkaluja
+						- Helpottaa elämää, apulaisia löytyy
+						- Avoimuus "pakottaa" meidät ylittämään itsemme
+						- Dude olisi ilman avointa lähdekoodia huomattavasti kehitykesssä jäljessä
+						- Kaikki Duden lisäosat ovat avoimena GitHubissa, ilman taka-ajatuksia
+						- Air edustettuna Speckyboy-verkkolehdessä https://speckyboy.com/wordpress-starter-themes/						
+					</script>
+				</section>
+
+				<section class="end" data-markdown data-separator-notes="^Note:" data-background-image="img/kalja.gif" style="text-align: center;">
+					<script type="text/template">
+						# Kiitos!
+					</script>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
